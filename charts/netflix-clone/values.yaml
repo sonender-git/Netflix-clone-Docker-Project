@@ -1,0 +1,14 @@
+replicaCount: 1
+
+image:
+  repository: <ECR_REPOSITORY_URL>  # Replace with your ECR repository URL
+  pullPolicy: IfNotPresent
+  tag: "latest"
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: false
+  # Add your ingress configurations here
