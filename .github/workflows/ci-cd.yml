@@ -26,14 +26,10 @@ jobs:
 
       - name: Build, tag, and push image to Amazon ECR
         env:
-          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          ECR_REPOSITORY: ${{ secrets.ECR_REPOSITORY }}
+          ECR_REGISTRY: public.ecr.aws/h3n1a7z5  # Use the registry URL directly
+          ECR_REPOSITORY: netflix-clone  # Repository name without the registry URL
           IMAGE_TAG: latest
         run: |
-          # Debug: Print out the ECR_REGISTRY and ECR_REPOSITORY to check if they are set correctly
-          echo "ECR Registry: $ECR_REGISTRY"
-          echo "ECR Repository: $ECR_REPOSITORY"
-          # Build and push
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
 
