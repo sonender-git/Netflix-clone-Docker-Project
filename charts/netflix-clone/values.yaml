@@ -1,12 +1,12 @@
 replicaCount: 1
 
 image:
-  repository: <ECR_REPOSITORY_URL>  # Replace with your ECR repository URL
+  repository: public.ecr.aws/h3n1a7z5/netflix-clone  # Replace with your ECR repository URL
   pullPolicy: IfNotPresent
   tag: "latest"
 
 service:
-  type: ClusterIP
+  type: LoadBalancer
   port: 80
 
 ingress:
