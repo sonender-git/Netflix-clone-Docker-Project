@@ -53,7 +53,7 @@
 - Finally, if you use v3 of TMDB API, create a file named `.env`, and copy and paste the content of `.env.example`.
   And then paste the API Key you just created.
 
-## Which features this project deal with
+## Which features this project deal with.
 
 - How to create and use [Custom Hooks](https://reactjs.org/docs/hooks-custom.html)
 - How to use [Context](https://reactjs.org/docs/context.html) and its provider
